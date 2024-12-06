@@ -1,0 +1,10 @@
+
+<div class=" tailleforwindow" style="z-index: 1;"  style="width: 100%;">
+    <div  style="width: 100%;">
+      <ngb-carousel >
+        <ng-template  ngbSlide *ngFor="let event of slides">
+          <img [src]="event.url" class="photosiz" alt="Random slide" style="width: 100%;  ">
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>

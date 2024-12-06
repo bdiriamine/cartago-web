@@ -1,0 +1,405 @@
+
+.active {
+    position: relative;
+}
+.text {
+    color: rgb(95 125 137);
+}
+.active:after {
+    /* border-bottom: 2px solid #e1ad11; */
+    height: 100%;
+    width: 100%;
+    content: "";
+    bottom: 0px;
+    position: absolute;
+    top: 8px;
+}
+
+.active a {
+    color: #e1ad11 !important;
+}
+
+.signin {
+    color: #e1ad11;
+    /* margin-left: 6px; */
+}
+
+.navbar {
+    font-size: 1.1rem;
+    height: 80px;
+    background:  rgb(12, 12, 39);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    outline: none;
+    
+}
+
+li.nav-item {
+    cursor: pointer;
+    z-index: 99999 !important;
+}
+
+li.nav-item a {
+    cursor: pointer;
+    z-index: 99999 !important;
+}
+
+.card {
+    background-color: #121c29;
+}
+
+.settings {
+    /* margin-left: 5px; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+}
+
+.avatar {
+    /* color: rgba(255, 255, 255, 0.55); */
+    color: rgb(95 125 137);
+
+    /* padding-right: 1rem; */
+    /* font-family  : Ubuntu Medium,sans-serif; */
+    font-family: "Prototype" Medium, sans-serif;
+    margin-right: 12px;
+}
+
+.avatar img {
+    max-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.navbar-collapse.pl-lg-5.collapse.show {
+    z-index: 999999 !important;
+}
+ul.navbar-nav {
+    z-index: 9999 !important;
+}
+
+.parameters {
+    width: 300px;
+    position: absolute;
+    z-index: 999;
+    background: #121c29;
+    right: 1%;
+    border-radius: 7px;
+    top: 73px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.balance {
+    /* color: rgba(255, 255, 255, 0.55)  ;   */
+    color: #f7a600;
+    /* font-family: Ubuntu Medium,sans-serif;; */
+    font-family: "Prototype" Medium, sans-serif;
+    width: 100px;
+}
+
+.float {
+    transform: translatey(0px);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.parameters .item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .collapse.show {
+        background: #121c29;
+        z-index: 9;
+        padding: 1rem;
+    }
+    .navbar-dark .navbar-toggler {
+        border-color: rgb(228 171 4);
+        outline: none;
+    }
+}
+
+@media (max-width: 500px) {
+    a.navbar-brand img {
+        height: 45px !important;
+    }
+}
+
+.auth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 14.7rem;
+}
+
+.langue {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    min-width: 13.7rem;
+}
+
+.bttn {
+    border: 1px solid #f7a600;
+    height: 2.625rem;
+    min-width: 6.5625rem;
+    /* background: var(--gradient); */
+    /* color: #fff; */
+    font-size: 1.0313rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    margin-right: 10px;
+}
+
+.bttn:hover {
+    background-color: #f7a600;
+    color: #121c29;
+}
+
+.bttn:hover .signin {
+    color: #121c29;
+    /* margin-left: 6px; */
+}
+
+.bttn-loggedin {
+    border: 1px solid #f7a600;
+    height: 2.625rem;
+    min-width: 6.5625rem;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 1.0313rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.1875rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+.bttn-loggedin:hover {
+    background-color: #f7a600;
+    color: #121c29;
+}
+
+::ng-deep .lang span.ng-clear-wrapper {
+    display: none;
+}
+
+::ng-deep .lang .ng-select .ng-arrow-wrapper .ng-arrow {
+    border-color: var(--secondary) transparent;
+    border-style: solid;
+    border-width: 5px 5px 2.5px;
+}
+
+::ng-deep.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #f7a600;
+}
+
+::ng-deep .lang .ng-select .ng-select-container {
+    background-color: #121c29;
+    border: 0;
+    color: #f7a600;
+    border-radius: 1.3rem !important;
+}
+
+::ng-deep .lang .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    color: rgb(236 236 236);
+}
+
+::ng-deep .lang .ng-select.ng-select-opened > .ng-select-container {
+    background: var(--primary);
+    border-radius: 1.3rem !important;
+}
+
+::ng-deep .lang .ng-dropdown-panel {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+::ng-deep .lang .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    background-color: var(--primary);
+}
+
+::ng-deep .lang .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    background-color: #f8a800;
+}
+
+::ng-deep .ng-option-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+::ng-deep .lang .ng-dropdown-panel.ng-select-bottom {
+    border-top-color: var(--primary);
+}
+
+::ng-deep .lang .ng-select.ng-select-single .ng-select-container {
+    border-radius: 1.3rem !important;
+    box-shadow: 0 !important;
+}
+
+::ng-deep .lang .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::ng-deep .lang .ng-select,
+.ng-select div,
+.ng-select input,
+.ng-select span {
+    font-size: 15px;
+}
+
+.ng-select.custom {
+    border: 0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+
+.ng-select.custom ::ng-deep .lang .ng-select-container {
+    min-height: 0px;
+    border-radius: 0;
+    border-radius: 1.3rem !important;
+}
+
+.lang {
+    background: var(--primary-light);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border: 1px solid #f7a600;
+    border-radius: 3px;
+    height: 2.625rem;
+}
+
+@media (min-width: 1201px) and (max-width: 1355px) {
+    .navbar {
+        font-size: 13px;
+    }
+    .tag[_ngcontent-fvq-c138] {
+        position: absolute;
+        top: -8px;
+        padding: 3px -1px;
+        text-align: center;
+        background: red;
+        color: #fff;
+        font-size: 12px;
+        z-index: 9;
+        transform: scale(1, 1);
+        animation: tag 3s ease-in-out infinite;
+        border-radius: 11px;
+        right: -37px;
+    }
+    .bttn {
+        border: 1px solid #f7a600;
+        height: 2.625rem;
+        min-width: 4.5625rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 1.3rem;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: 0.2s ease;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .navbar {
+        font-size: 10px;
+    }
+    .tag {
+        position: absolute;
+        top: -8px;
+        padding: 1px 7px;
+        text-align: center;
+        background: red;
+        color: #fff;
+        font-size: 6px;
+        z-index: 9;
+        transform: scale(1, 1);
+        animation: tag 3s ease-in-out infinite;
+        border-radius: 11px;
+        right: -37px;
+    }
+    .bttn {
+        width: 11%;
+        min-width: 4.5625rem;
+        font-size: 11px;
+    }
+    .lang .ng-select,
+    .ng-selectdiv,
+    .ng-selectinput,
+    .ng-select span {
+        font-size: 9px;
+    }
+}
+
+.tag {
+    position: absolute;
+    top: -8px;
+    padding: 3px 7px;
+    text-align: center;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    z-index: 9;
+    transform: scale(1, 1);
+    animation: tag 3s ease-in-out infinite;
+    border-radius: 11px;
+    right: -37px;
+}
+
+@keyframes tag {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}

@@ -1,0 +1,132 @@
+.bloc {
+    position: relative;
+    height: 270px;
+    width: 450px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.bloc img {
+    height: 300px;
+    top: -51px;
+    position: absolute;
+}
+
+.bloc:before {
+    content: "";
+    background: linear-gradient(360deg, rgb(250 223 143) 0%, rgb(254 229 158) 3%, rgb(214 214 195 / 14%) 72%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    border-radius: 16px;
+}
+
+.title {
+    position: absolute;
+    color: #fff;
+    bottom: 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Prototype";
+}
+
+.bloc:hover .title {
+    color: #e7ab02;
+    color: #c7c7c7;
+    font-size: 1.4rem;
+    font-weight: 700;
+    z-index: 9;
+    font-family: "Prototype";
+}
+
+.bloc:hover img {
+    transform: translateY(-18px);
+    transition-duration: 1s;
+    z-index: 9;
+}
+
+.bloc:hover:before {
+    background: transparent;
+}
+
+.bloc-long .bloc {
+    width: 500px;
+}
+
+.bloc:after {
+    content: "";
+    background: linear-gradient(
+        360deg,
+        rgba(23, 36, 56, 1) 0%,
+        rgba(70, 75, 19, 0.7567401960784313) 35%,
+        rgba(236, 236, 236, 1) 100%
+    );
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    transform: rotate(180deg);
+    z-index: -1;
+    border-radius: 16px;
+}
+
+.bloc:hover:after {
+    background: linear-gradient(-45deg, #e0ab0b, #eec753, #121c29, #ebebeb);
+    opacity: 0.7;
+    animation: gradient 2s ease infinite;
+    background-size: 400% 400%;
+    z-index: 2;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg {
+    background-attachment: fixed;
+    background-position: 50%;
+    position: relative;
+    height: 100%;
+    background: white;
+    top: 51px;
+}
+
+.bloc-animation {
+    z-index: 8;
+    width: 100%;
+}
+
+.wrapper__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-page {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.games-bloc {
+    margin-bottom: 51px;
+}
+
+video.wrapper__video {
+    width: 100%;
+}

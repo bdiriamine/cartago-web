@@ -1,0 +1,51 @@
+stages:
+  - build
+  - develop
+  - deploy_prod
+
+build:
+    stage: build
+    image: docker:latest
+    services:
+        - docker:dind
+    script:
+        - CONTAINER_TEST_IMAGE=${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_SHORT_SHA}
+        - echo "$REGISTRY_PASSWORD" | docker login -u $REGISTRY_USER  $CI_REGISTRY --password-stdin 
+        - "docker build -t ${CONTAINER_TEST_IMAGE} ."
+        - "docker push ${CONTAINER_TEST_IMAGE}"
+
+       
+develop:deploy:
+    stage: develop
+    image: nginx
+    only:
+        - develop
+    before_script:
+        - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+        - eval $(ssh-agent -s)
+        - echo "$DEV_SSH_KEY" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 600 ~/.ssh
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    script:
+        - whoami
+        - apt update
+        - apt install -y git
+        - CONTAINER_TEST_IMAGE=${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_SHORT_SHA}
+        - ssh ubuntu@$DEV_IP "docker pull $CONTAINER_TEST_IMAGE && docker service update --image $CONTAINER_TEST_IMAGE develop_carthago_front_web"
+
+deploy_prod:
+    stage: deploy_prod
+    image: nginx
+    only:
+        - prod
+    script:
+        - whoami
+        - apt update
+        - apt install -y git
+        - ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -P ""
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+        - apt install sshpass -y
+        - CONTAINER_TEST_IMAGE=${CI_REGISTRY}/${CI_PROJECT_PATH}:$CI_COMMIT_SHORT_SHA
+        - sshpass -p "Tigtig25614541" ssh root@178.218.196.26 "docker pull $CONTAINER_TEST_IMAGE && docker service update --image $CONTAINER_TEST_IMAGE prod_carthago_front_web"
+

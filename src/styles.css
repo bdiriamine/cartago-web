@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "Prototype";
+    /*src: local("Prototype"), url("./assets/style/Prototype.ttf") format("truetype");*/
+    src: local("Prototype"), url("assets/font/Prototype.ttf") format("truetype");
+}
+
+@import "~bs-stepper/dist/css/bs-stepper.min.css";
+@import "~ngx-toastr/toastr.css";
+@import "~ngx-toastr/toastr";
+@import "~ngx-toastr/toastr-bs4-alert";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~ngx-toastr/toastr-bs4-alert";
+html {
+    --primary: #121c29;
+    --primary-light: #17313a;
+    --separator: #213c47;
+    --secondary: #f7a600;
+    --secondary-light: #ffcc00;
+    --light: #ededed;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px !important;
+    /* font-family: 'Mukta', sans-serif !important; */
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin-top: unset !important;
+}
+
+#toast-container>div {
+    opacity: 1;
+}

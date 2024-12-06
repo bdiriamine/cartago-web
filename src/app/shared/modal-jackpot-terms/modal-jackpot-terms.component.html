@@ -1,0 +1,45 @@
+<div class="bg">
+    <div class="modal-header">
+
+        <div class="actions">
+            <span (click)="closeModal()" class="close"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class=" web no-gutters">
+            <div class="content-main touch-left bg2">
+                <div class="row header">
+                    <h4 class="page-title" translate>
+                        Terms and conditions</h4>
+                </div>
+
+                <div style="width: 100%;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th translate> From</th>
+                                <th translate> To </th>
+                                <th translate> Pourcentage </th>
+
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let term of terms">
+                            <tr>
+
+                                <td>{{term.from}}</td>
+                                <td>{{term.to}}</td>
+                                <td>{{term.pourcentage}}</td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

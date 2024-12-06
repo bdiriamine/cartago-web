@@ -1,0 +1,68 @@
+<div class="">
+    <app-pub id="pub"></app-pub>
+    <app-imageslid></app-imageslid>
+    <!-- <div class="slider">
+        <div class="top-page"> -->
+            
+            <!-- <img src= "https://carthagobet.tn/assets/images/b1.webp" alt=""  class="wrapper__video"> -->
+            <!-- <video autoplay loop muted>
+                <source >
+            </video> -->
+
+        <!-- </div>
+    </div> -->
+    <div class="bg">
+
+
+
+
+        <div class="bloc-animation" style="    background-color: rgb(12, 12, 39);
+        box-shadow: -13px -49px 313px 28px rgb(12, 12, 39);
+        -webkit-box-shadow: 0px -56px 39px 52px rgb(12, 12, 39); ">
+            <div class="container games-bloc d-flex justify-content-around pr-5 ">
+                <div *ngIf="sport" class="bloc d-flex align-items-center flex-column" [routerLink]="['/sport']">
+                    <img src="https://carthagobet.tn/assets/images/home/F1.webp" height="230px">
+                    <span class="title" translate>Sport</span>
+                </div>
+            
+                <!-- <div class="bloc d-flex align-items-center flex-column" [routerLink]="['/live']">
+                    <img src="https://carthagobet.tn/assets/images/home/F5.webp" height="230px">
+                    <span class="title" translate>Live</span>
+                </div> -->
+
+                <div *ngIf="!blocked && game" class="bloc d-flex align-items-center flex-column" [routerLink]="['/casino']">
+                    <img src="https://carthagobet.tn/assets/images/home/F4.webp" height="230px">
+                    <span class="title" translate>Casino</span>
+                </div>
+                <div *ngIf="!blocked && (isLoggedIn || gameShow)" class="bloc d-flex align-items-center flex-column" [routerLink]="['/casino-live']">
+                    <img src="https://carthagobet.tn/assets/images/home/F6.webp" height="230px">
+                    <span class="title" translate>Live casino</span>
+                </div>
+                <div *ngIf="!blocked && (isLoggedIn || virtuel)" class="bloc d-flex align-items-center flex-column" [routerLink]="['/virtual']">
+                    <img src="https://carthagobet.tn/assets/images/home/F2.webp" height="230px">
+                    <span class="title" translate>Virtual</span>
+                </div>
+            </div>
+
+            <div class="container games-bloc d-flex justify-content-around bloc-long ">
+                <div *ngIf="!blocked && (isLoggedIn ||jackpot)" class="bloc d-flex align-items-center flex-column" [routerLink]="['/jackpot']">
+                    <img src="https://carthagobet.tn/assets/images/home/F3.webp" height="230px">
+                    <span class="title" translate>Jackpot</span>
+                </div>
+                <div  class="bloc d-flex align-items-center flex-column" [routerLink]="['/live-score']">
+                    <img src="https://carthagobet.tn/assets/images/home/F8.webp" height="230px">
+                    <span class="title" translate>Live score</span>
+                </div>
+                <div *ngIf="!blocked && mini_games" class="bloc d-flex align-items-center flex-column" [routerLink]="['/mini-games-c']">
+                    <img src="https://carthagobet.tn/assets/images/home/F7.webp" loading="lazy" height="230px">
+                    <span class="title" translate>Mini games</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showJackpotWinner" class="animation">
+    <app-winner-gmaespub></app-winner-gmaespub>
+</div>

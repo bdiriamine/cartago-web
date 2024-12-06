@@ -1,0 +1,325 @@
+.casino-navs {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #efb100;
+}
+
+.casino-navss {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #efb100;
+}
+
+.top-page {
+    position: relative;
+    width: 100%;
+}
+
+.top-page img {
+    width: 100%;
+    object-fit: cover;
+    height: 33vh;
+}
+
+.top-page .text {
+    position: absolute;
+    top: 37%;
+    left: 55%;
+    color: #efb100;
+    font-size: 1.5rem;
+    width: 30%;
+    font-family: "Prototype";
+}
+
+.slider {
+    background: #f3b111;
+}
+
+span.icon {
+    position: absolute;
+    left: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121c29;
+}
+
+.items {
+    display: flex;
+    position: relative;
+    display: flex;
+    position: relative;
+    padding-left: 20px;
+    border-radius: 15px;
+}
+
+.items .item {
+    color: #213c47;
+    font-size: 15px;
+    background: #ffcc00;
+    margin-right: 8px;
+    font-weight: 700;
+    padding: 0 16px 0 4px;
+    border-radius: 20px;
+    height: 32px;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: "Prototype";
+}
+
+.itemActive {
+    color: #213c47 !important;
+    background: #ffcc00 !important;
+}
+
+.wrapper__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-item .item {
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    cursor: pointer;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.scroll-item {
+    padding-top: 10px;
+}
+
+.item img {
+    border-radius: 15px;
+}
+
+::ng-deep .drag-scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-game-category-icon {
+    height: 24px;
+    width: auto;
+    font-size: 1.2em;
+    margin-right: 0.25rem;
+    color: #af2925;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    font-family: "Prototype";
+}
+
+::ng-deep .drag-scroll-content {
+    width: 100%;
+}
+
+.big {
+    grid-row: span 2;
+    grid-column: span 2;
+    align-self: stretch;
+    z-index: 1;
+}
+
+.games {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line .item {
+    flex-grow: 1;
+    margin: 10px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.secondary {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 3;
+    padding-left: 10px;
+}
+
+.line {
+    display: grid !important;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.line .item img {
+    width: 100%;
+    object-fit: fill;
+    height: 200px;
+    border-radius: 12px 12px 0px 0px;
+    border-top: 4px solid #efb100;
+    border-left: 4px solid #efb100;
+    border-right: 4px solid #efb100;
+}
+
+.line .big img {
+    height: 457px;
+}
+
+.line .text {
+    background: #121c29;
+    color: rgb(214, 214, 214);
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 5px;
+    font-weight: 400;
+    border-radius: 0px 0px 12px 12px;
+    font-family: "Prototype";
+    border-top: 2px solid #efb100;
+    border-left: 4px solid #efb100;
+    border-right: 4px solid #efb100;
+    border-bottom: 4px solid #efb100;
+}
+
+@media (max-width: 1450px) {
+    .line {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1220px) {
+    .line {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 970px) {
+    .line {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .line {
+        display: block;
+    }
+}
+
+.on-hover {
+    display: none;
+}
+
+.line .item:hover .on-hover {
+    display: block !important;
+    background: #00000057;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+}
+
+.line .item:hover .on-hover::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+
+.line .item:hover .on-hover::before {
+    -webkit-animation: shine 1.5s;
+    animation: shine 1.5s;
+}
+
+.on-hover img {
+    height: 48px !important;
+    width: 48px !important;
+    top: 40% !important;
+    position: absolute !important;
+}
+
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+::ng-deep .my-class .modal-dialog {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: #5cb3fd;
+}
+
+.items {
+    display: flex;
+    position: relative;
+    padding-left: 20px;
+}
+
+.f .item {
+    color: rgb(95 125 137);
+    font-size: 15px;
+    background: #152633;
+    margin-right: 8px;
+    font-weight: 700;
+    padding: 0 10px 0 10px;
+    border-radius: 20px;
+    height: 42px;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: "Prototype";
+    width: 189px;
+}
+
+.jackpot {
+    font-size: 26px;
+    border-radius: 5px;
+}
+
+.selectt {
+    width: 197px;
+    border-radius: 8px;
+    height: 35px;
+    text-align: center;
+    font-family: "Prototype";
+    font-weight: 700;
+}
+
+.text span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}

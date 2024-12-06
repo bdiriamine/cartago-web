@@ -1,0 +1,14 @@
+<div *ngIf="!maint" class="live-casino" style="background-color: #121c29;">
+    <div class="slider">
+        <div class="top-page">
+
+            <img src="../../../assets/images/mini2.webp" >
+        </div>
+
+    </div>
+    <app-minigames style="padding-top: 5%;"></app-minigames>
+
+
+</div>
+
+<app-element-maintain *ngIf="maint" [page]="title"></app-element-maintain>

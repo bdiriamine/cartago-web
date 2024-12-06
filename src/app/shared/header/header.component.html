@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row divblock" style="background-color: rgb(12, 12, 39);height:130px">
+      <div class="col-md-6" style="margin-bottom: 1%;">
+        <a [routerLink]="['/']">
+          <img src="../../../assets/images/logoc.webp" alt=""
+            style=" margin-top: 4%; margin-left: 3%;   width: 280px;vertical-align: middle;">
+        </a>
+      </div>
+      <div *ngIf="!isLoggedIn" class="col-md-6 col-6" style="display: flex;
+      align-items: center;
+      justify-content: center;">
+        <!-- <form class=" container form-inline form-login flex-lg-nowrap" [formGroup]="loginForm" (ngSubmit)="login()"
+          style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate> -->
+          <form class=" container form-inline form-login flex-lg-nowrap"  [formGroup]="loginForm" (ngSubmit)="login()"
+          style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate>
+          <div>
+            <div class="left-inner-addon input-container">
+              <i class="fa fa-user icon" style="font-size: 17px;"></i>
+              <input type="text" class="form-control login-username input-field" placeholder="Username" required=""
+                style="background-color: #404040; border-color: #404040;color: rgb(165, 165, 165);border-radius: 5px;background-color: white;"
+                formControlName="username">
+            </div>
+          </div>
+          <div style="margin-left: 1%;">
+            <div class="left-inner-addon input-container">
+              <i class="fa fa-lock" style="font-size: 19px;"></i>
+              <input type="password" class="form-control login-password input-field" placeholder="Password" required=""
+                style="background-color: #404040; border-color: #404040;color: rgb(179, 178, 178);background-color: white;border-radius: 5px;"
+                formControlName="password">
+              <!-- <a routerLink="/forgot-password" title="Forgot password?" class="forgot-password-desktop"
+                  style="font-family: 'Roboto', sans-serif;font-weight: bolder;">
+                  Forgot password? </a> -->
+            </div>
+          </div>
+          <div class="left-inner-addon input-container" style="margin-left: 1%;">
+            <!-- <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title=""
+              style=" background-color: transparent;opacity: 100%;height: 30px; font-weight: bold;font-size: 15px; border: 1px solid #eda12a;color: #eda12a;"
+              translate> <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1 text-warning"
+                style="margin-bottom: 5px;font-family: beinfr;" translate></span>Connexion</button> -->
+                <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title=""
+                style=" background-color: transparent;opacity: 100%;height: 38px; font-weight: bold;font-size: 15px; border: 1px solid #fbb408;color: #fbb408;background-color: black;"
+                translate> Connexion</button>
+            <!-- <a routerLink="/register"  title="Register" class="btn btn-secondary-fancy btn-register" style="height: 30px; font-weight: bold;font-size: 15px;background: linear-gradient(#d86600,#fac645,#d86600);color: rgb(29, 29, 29);border-radius: 5px;">Register</a> -->
+          </div>
+          <div class="left-inner-addon input-container" >
+            <!-- <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title=""
+              style=" background-color: transparent;opacity: 100%;height: 30px; font-weight: bold;font-size: 15px; border: 1px solid #eda12a;color: #eda12a;"
+              translate> <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1 text-warning"
+                style="margin-bottom: 5px;font-family: beinfr;" translate></span>Connexion</button> -->
+                <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title="" (click)="openModalRegister()"
+                style=" background-color: #fbb408;opacity: 100%;height: 38px; font-weight: bold;font-size: 15px; border: 1px solid #fbb408;color: #020202;"
+                translate> Inscription</button>
+            <!-- <a routerLink="/register"  title="Register" class="btn btn-secondary-fancy btn-register" style="height: 30px; font-weight: bold;font-size: 15px;background: linear-gradient(#d86600,#fac645,#d86600);color: rgb(29, 29, 29);border-radius: 5px;">Register</a> -->
+          </div>
+        </form>
+  
+      </div>
+  
+  
+    </div>
+  
+  </div>
+  

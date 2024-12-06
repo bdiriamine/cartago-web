@@ -1,0 +1,131 @@
+<div class="event-stream__container">
+    <ul class="list-winners">
+        <li *ngFor="let winner of winnersList">
+            <div class="flex-verticale">
+                <span class="event-stream-list__icon-holder" (click)="openGame(winner.game)">
+                    <img class="img-bg"
+                        src="../../../assets/images/home/big-win-medal.png"
+                        alt="">
+                        <img class="game-img" src="{{winner.game.game_image}}">
+                </span>
+                <div class="event-stream-list__content">
+                    <span>
+                        <span id="colorNAWINER">
+                            {{winner.username}}
+                        </span>
+                        <br>
+                        <span>
+                        {{winner.game.game_name}}
+                        </span>
+                         <br>
+                         <span id="colorNAWINER" class="fw-bold">{{winner.amount}} TND</span>
+                         <br>
+                        <span  id="colorNA">
+                            {{winner.created_at | date: 'dd/MM/yyyy'}}
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </li>
+        <!-- <li >
+            <div class="flex-verticale">
+                <span class="event-stream-list__icon-holder">
+                    <img class="img-bg"
+                        src="../../../assets/images/home/big-win-medal.png"
+                        alt="">
+                        <img class="game-img-tow" src="../../../assets/images/home/img-test-winner2.jpeg">
+                </span>
+                <div class="event-stream-list__content">
+                    <span>
+                        <span id="colorNAWINER">
+                            sub699
+                        </span>
+                        has just collected
+                        <span>
+                            x20 win
+                        </span> <br>
+                        in
+                        <span  id="colorNA">
+                            game NAme
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="flex-verticale">
+                <span class="event-stream-list__icon-holder">
+                    <img class="img-bg"
+                        src="../../../assets/images/home/big-win-medal.png"
+                        alt="">
+                        <img class="game-img-tow" src="../../../assets/images/home/img-test-winner2.jpeg">
+                </span>
+                <div class="event-stream-list__content">
+                    <span>
+                        <span id="colorNAWINER">
+                            sub699
+                        </span>
+                        has just collected
+                        <span>
+                            x20 win
+                        </span> <br>
+                        in
+                        <span  id="colorNA">
+                            game NAme
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="flex-verticale">
+                <span class="event-stream-list__icon-holder">
+                    <img class="img-bg"
+                        src="../../../assets/images/home/big-win-medal.png"
+                        alt="">
+                        <img class="game-img-tow" src="../../../assets/images/home/img-test-winner2.jpeg">
+                </span>
+                <div class="event-stream-list__content">
+                    <span>
+                        <span id="colorNAWINER">
+                            sub699
+                        </span>
+                        has just collected
+                        <span>
+                            x20 win
+                        </span> <br>
+                        in
+                        <span  id="colorNA">
+                            game NAme
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </li>
+        <li >
+            <div class="flex-verticale">
+                <span class="event-stream-list__icon-holder">
+                    <img class="img-bg"
+                        src="../../../assets/images/home/big-win-medal.png"
+                        alt="">
+                        <img class="game-img-tow" src="../../../assets/images/home/img-test-winner2.jpeg">
+                </span>
+                <div class="event-stream-list__content">
+                    <span>
+                        <span id="colorNAWINER">
+                            sub699
+                        </span>
+                        has just collected
+                        <span>
+                            x20 win
+                        </span> <br>
+                        in
+                        <span  id="colorNA">
+                            game NAme
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </li> -->
+    </ul>
+</div>

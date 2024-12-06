@@ -1,0 +1,123 @@
+.event-stream__container {
+    bottom: 0;
+    position: fixed;
+    background-color: #213c47;
+    width: 100%;
+    z-index: 9999 !important;
+    justify-content: center;
+    padding: 10px 30px;
+}
+
+.event-stream-list__icon-holder {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    width: 70px;
+    margin-right: 10px;
+    /* margin-left: -80px; */
+    cursor: pointer;
+}
+
+img.img-bg {
+    display: ff;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+img.game-img {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    max-width: 80%;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.game-img-tow {
+    position: absolute;
+    left: 12%;
+    top: 17px;
+    max-width: 80%;
+}
+
+.list-winners {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-verticale {
+    display: flex;
+    align-items: center;
+}
+
+.event-stream-list__content {
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    white-space: normal;
+    font-family: Arial, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 1.333;
+    color: #a9bfca;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.event-stream-list__item {
+    top: 5px;
+    position: absolute;
+    transition: all 1s;
+    direction: ltr;
+    box-sizing: border-box;
+    vertical-align: top;
+    display: inline-block;
+    min-height: 70px;
+    margin-left: 26px;
+    padding-left: 80px;
+    white-space: nowrap;
+    text-align: left;
+    list-style-type: none;
+    width: 215px;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+ul {
+    overflow: hidden;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-stream__container {
+    background-color: #213c47;
+    animation: mymove 5s infinite;
+}
+@keyframes mymove {
+    from {
+        background: linear-gradient(90deg, rgb(12, 12, 39) 0%, rgb(12, 12, 39) 25%, rgb(3, 0, 63) 100%);
+    }
+    to {
+        background: linear-gradient(90deg, rgb(3, 0, 63) 0%, rgba(9, 9, 121, 1) 25%, rgb(12, 12, 39) 100%);
+    }
+}
+#colorNAWINER {
+    color: #ffcc00;
+}
+#colorNA {
+    color: rgb(95 125 137);
+}

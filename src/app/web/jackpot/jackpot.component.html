@@ -1,0 +1,49 @@
+<div class="live-casino">
+  <div class="slider">
+    <div class="top-page">
+      <video autoplay loop muted class="wrapper__video">
+        <source src="https://carthagobet.tn/assets/images/jackpot YEL.mp4">
+      </video>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="casino-navs">
+    <div class="search">
+      <input type="text" [(ngModel)]="searchName" placeholder="search">
+
+      <span class="icon"><i class="fa fa-search"></i></span>
+    </div>
+  </div>
+
+
+  <div class="games">
+
+    <div class="line snowContainer">
+      <div class="item" *ngFor="let game of listGame | searchFilter: searchName: 'name' ">
+        <img *ngIf="game.image" src={{game.image}} width="210" height="140" loading="lazy" style="  border-top: 4px solid #efb100;
+                border-left: 4px solid #efb100;
+                border-right: 4px solid #efb100;">
+        <div class="text">
+          <span style="    white-space: nowrap;
+                    text-overflow: ellipsis;">{{game.name}}</span>
+        </div>
+        <div *ngIf="isLoggedIn==true" class="on-hover" (click)="openModal(game)">
+          <div class="d-flex align-items-center justify-content-center">
+            <img href="https://google.fr" src="https://img.icons8.com/fluent-systems-filled/48/ffffff/play.png" />
+          </div>
+        </div>
+        <div *ngIf="isLoggedIn==false" class="on-hover" (click)="openToast()">
+          <div class="d-flex align-items-center justify-content-center">
+            <img style="z-index: 999;" src="https://img.icons8.com/fluent-systems-filled/48/ffffff/play.png" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

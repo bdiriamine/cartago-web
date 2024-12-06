@@ -1,0 +1,75 @@
+<div class="footer d-flex px-4">
+    <div class="licence">
+        <div>
+            <a href="https://licensing.gaming-curacao.com/validator/?lh=686550c5369e6774e220eea348e077e6&amp;rlh=18f050777afb816b90b74ec22089f353"
+                target="_blank ">
+                <img src="https://carthagobet.tn/assets/images/gc-logo.png" loading="eager" width="120 " height="45 "
+                    alt="GAMING CURACAO LICENSEE CLICK FOR MORE INFORMATION " class="centri">
+                <img src="https://carthagobet.tn/assets/images/verified.png" width="25 " alt="VERIFIED URL "
+                    class="centriVer">
+            </a>
+            <p class="pt-3"><strong translate
+                    style="font-family: 'Poppins', sans-serif; color: rgb(95 125 137); font-size: 13px;">Gambling
+                    might be addictive.
+                    Play with caution!</strong></p>
+        </div>
+        <div class="advices" style="color: rgb(95 125 137);">
+
+            <p translate>Carthagobet is operated by Zazasiv Group Technology Ltd a UK company registered under the
+                address 71-75 Shelton Street, Covent Garden, London, England, WC2H 9JQ licensed and regulated by the law
+                of Curacao under the Master License of Gaming
+                Services Provider, N.V. #365/JAZ</p>
+            <!-- <p>Carthagobet is registered Marque and protected by Tunisian law, operated by ClickToWin Tunisia Ltd-
+                street 14 Janvier, 4054 Sousse Payments are processed by ClickToWin Tunisia LTD as per agreement between
+                the two companies</p> -->
+        </div>
+
+    </div>
+    <div class="about">
+        <h5 translate class="advices" style="color: rgb(95 125 137);"> About </h5>
+        <ul>
+            <li><a [routerLink]="['/terms&conditions']" translate class="advices">Termes and conditions</a></li>
+            <li><a [routerLink]="['/responsible-gaming']" class="advices" translate>Responsible Gaming</a></li>
+            <li><a [routerLink]="['/privacy-policy']" class="advices" translate>Privacy Policy</a></li>
+            <li><a [routerLink]="['/aml-privacy']" class="advices" translate>AML KYC Policy</a></li>
+            <li><a translate (click)="openModal()" class="advices">Cashback terms</a></li>
+        </ul>
+    </div>
+
+    <div class="social-media">
+        <h5 translate class="advices"> Social media </h5>
+        <div class="items">
+            <a style="cursor: pointer;" href="https://www.facebook.com/Carthagobet.tn"><img
+                    src="https://carthagobet.tn/assets/images/socialMedia/F.svg" width="30px" /></a>
+            <a style="cursor: pointer;"><img src="https://carthagobet.tn/assets/images/socialMedia/In.svg"
+                    width="30px" /></a>
+            <a style="cursor: pointer;" href="https://instagram.com/carthagobet"><img
+                    src="https://carthagobet.tn/assets/images/socialMedia/Ins.svg" width="30px" /></a>
+            <a style="cursor: pointer;"><img src="https://carthagobet.tn/assets/images/socialMedia/Y.svg"
+                    width="30px"></a>
+        </div>
+        <h5 translate class="advices" style="margin-top: 20px;">Our partner </h5>
+        <div class="items">
+            <span style="cursor: pointer;"><img src="../../../assets/images/evoplay.png" width="80px" /></span>
+            <span style="cursor: pointer;"><img src="../../../assets/images/spinominal.png" width="60px" /></span>
+
+        </div>
+        <div class="contactt">
+            <i class="fa fa-envelope-square" style="color: #243f4e ; padding-right: 10px; margin-top: 20px;"></i>
+            <h5 (click)="openModalContact()" class="contact" translate class=" colorr" style="    cursor: pointer;">
+                Contact
+                us </h5>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+<div class=" plus18" [ngStyle]="currentRoot == '/home'? {'padding-bottom' : '5.5rem'} : {'padding-bottom': '1rem'}">
+    <span style="cursor: pointer;"><img src="../../../assets/images/+18.png" width="30px" /></span>
+    <p translate class="text">Attention! It is gambling advertising. Gambling is not suitable for solving
+        financial problems.
+        Please read terms and conditions and play responsibly.</p>
+</div>

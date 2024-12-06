@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left" translate>Login</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body  login-box" style="    display: flex;
+align-items: center;
+justify-content: space-evenly;
+">
+    <form [formGroup]="loginForm" (keydown)="login($event)">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="form-group">
+                <label class="center-block" translate>Username:
+                    <input class="form-control" formControlName="username">
+                </label>
+
+                <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="alert-danger">
+                    <div *ngIf="loginForm.controls.username.errors?.required" translate>
+                        Username is required
+                    </div>
+                    <div *ngIf="loginForm.controls.username.errors?.username" translate>
+                        Username is not correct
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="center-block position-relative" translate>Password:
+                    <input class="form-control" formControlName="password"
+                        [type]=" showPassword ? 'text' : 'password' ">
+                    <span class="eye" *ngIf="!showPassword" (click)="onShowPassword()"><i
+                            class="fa fa-eye-slash"></i></span>
+                    <span class="eye" *ngIf="showPassword" (click)="onShowPassword()"><i class="fa fa-eye"></i></span>
+                </label>
+
+                <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert-danger">
+                    <div *ngIf="loginForm.controls.password.errors?.required" translate>
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="login d-flex justify-content-center" (click)="loginn()" translate>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Login
+        </a>
+    </form>
+</div>

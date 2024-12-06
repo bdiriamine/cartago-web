@@ -1,0 +1,126 @@
+<div *ngIf="!maint" class="live-casino">
+    <div class="slider">
+
+        <app-slider></app-slider>
+
+    </div>
+
+    <div class="casino-navs">
+        <div class="search" (keydown)="searchClickk($event)">
+            <input type="text" [placeholder]=search [(ngModel)]="searchVal" (change)="getValuee(searchVal)">
+
+            <span class="icon" (click)="searchClick()"><i class="fa fa-search"></i></span>
+        </div>
+
+
+        <div class="items">
+
+
+            <ng-select class="custom provider selectt" [(ngModel)]="selectedProvider" [searchable]="false"
+                (change)="getproviderEvent($event)" style=" text-transform: capitalize; ">
+                <ng-option value="" translate>All providers</ng-option>
+                <ng-option [value]="p.provider" *ngFor="let p of providersList">{{ p.provider}}
+                </ng-option>
+            </ng-select>
+
+
+        </div>
+    </div>
+    <div class="scroll-item">
+        <drag-scroll class="f" style="height: 100%; width: 100%;">
+
+
+
+            <div class="item" [ngClass]="selectedItem === 'All games' ? 'itemActive' : 'item' " (click)="byAllCat()"
+                translate>
+                <img src="https://carthagobet.tn/assets/images/casino-categories/icn.svg"
+                    class="nav-game-category-icon"> All games
+            </div>
+            <div class="item" *ngFor="let cat of categories" (click)="getCategoryEvent(cat.category)"
+                [ngClass]="selectedItem === cat.category? 'itemActive' : 'item' " style=" text-transform: capitalize; ">
+                <img src="https://carthagobet.tn/assets/images/casino-categories/icn.svg"
+                    class="nav-game-category-icon">
+                {{cat.category}}
+            </div>
+
+
+            <div class="bg-shadow-start"></div>
+            <div class="bg-shadow"></div>
+
+
+
+            <div class="bg-shadow-start"></div>
+            <div class="bg-shadow"></div>
+        </drag-scroll>
+    </div>
+
+
+
+
+
+
+    <div class="games">
+
+        <div class="line snowContainer ">
+
+
+            <div [ngClass]="[game.is_featured === 1 ? 'item big snowExample' : 'item' , game.is_jackpot === 1 ? 'item jackpot' : 'item'] "
+                *ngFor="let game of listGame" infiniteScroll [infiniteScrollDistance]="2"
+                [infiniteScrollUpDistance]="1.5" [infiniteScrollThrottle]="100" (scrolled)="onScroll($event)">
+                <span *ngIf="game.is_jackpot==1" class="tag">Jackpot</span>
+
+                <img *ngIf="game.image" src={{game.image}} width="210" height="140" loading="lazy">
+
+                <div class="text">
+                    <span>{{game.name}}</span>
+                </div>
+                <div *ngIf="isLoggedIn==true" class="on-hover" (click)="openModal(game,game.menu_title,game.image)">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img style="z-index: 999;"
+                            src="https://img.icons8.com/fluent-systems-filled/48/ffffff/play.png" />
+                    </div>
+                </div>
+                <div *ngIf="isLoggedIn==false" class="on-hover" (click)="openToast()">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img style="z-index: 999;"
+                            src="https://img.icons8.com/fluent-systems-filled/48/ffffff/play.png" />
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div *ngIf="load == true   && listGame.length == 0" style="    width: 100%;
+    font-family: prototype;
+    /* padding-left: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+">
+        <div class="spinner-border " style="color: #121c29 !important;" role="status">
+
+        </div>
+
+
+    </div>
+    <div *ngIf="games !== undefined && games.length === 0" style="    width: 100%;
+    font-family: prototype;
+    /* padding-left: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+">
+        <p>There's no result
+            for this
+            filter, please try another one</p>
+    </div>
+</div>
+
+<app-element-maintain *ngIf="maint" [page]="title"></app-element-maintain>

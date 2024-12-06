@@ -1,0 +1,14 @@
+.chat {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 60px;
+    z-index: 999;
+    right: 118px;
+}
+.isMaintenance {
+    padding-top: 5rem;
+}
+
+

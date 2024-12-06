@@ -1,0 +1,79 @@
+<div class=" web no-gutters">
+    <div class="content-main touch-left bg">
+        <div class="row header">
+            <h4 class="page-title" translate>
+                transactions history</h4>
+        </div>
+        <div *ngIf="lengthdata == 0">
+            <div> <span class="empty-text transaction" translate> No transactions yet.</span>
+            </div>
+
+        </div>
+        <div style="width: 100%;">
+            <table *ngIf="lengthdata != 0">
+                <thead>
+                    <tr>
+                        <th translate> Created at </th>
+                        <th translate> Amount </th>
+                        <th translate> Type of transaction </th>
+                        <th translate> Balance before </th>
+                        <th translate> Balance Now </th>
+                        <th translate> Name </th>
+                        <th translate> Id </th>
+
+
+                    </tr>
+                </thead>
+                <tbody *ngFor="let tk of transactions;index as i;">
+                    <tr>
+                        <td>{{tk.createdAt | date:'MM/dd/yyyy HH:MM ' }}</td>
+                        <td>{{tk.amount | number:'1.1-2'}}</td>
+                        <td [ngClass]="tk.action ==='win'? 'winColor' : 'betColor' ">{{tk.action }}</td>
+                        <td>{{tk.old_balance | number:'1.1-2'}}</td>
+                        <td>{{tk.new_balance | number:'1.1-2' }}</td>
+                        <td>{{tk.game_identifier}}</td>
+                        <td>{{tk.id }}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+            <div *ngIf="lengthdata != 0" class="row" style="width: 100%;text-align: center;">
+                <div class="col-md-12"> <span class="empty-text"> Page :
+                        {{page+1}}</span></div>
+            </div>
+            <div *ngIf="lengthdata != 0" class="navv">
+                <nav aria-label="Page navigation example" style="color: black;     width: 96%;">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <button style="background-color: transparent;border: none;">
+                                <a class="page-link" (click)="backTo()" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </button>
+
+                        </li>
+                        <div class="pagess">
+                            <li class="page-item" *ngFor="let p of arraytotal; let i = index">
+                                <button style="background-color: transparent;border: none;">
+                                    <a class="page-link" (click)="getdTicketsPlayerPage(i)">{{i+1}}</a>
+                                </button>
+                            </li>
+                        </div>
+
+                        <li class="page-item">
+                            <button style="background-color: transparent;border: none;">
+                                <a class="page-link" (click)="nextTo()" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </button>
+
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>

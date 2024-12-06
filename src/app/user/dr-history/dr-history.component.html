@@ -1,0 +1,86 @@
+<div class=" web no-gutters">
+    <div class="content-main touch-left bg">
+        <div class="row header">
+            <h4 class="page-title" translate>
+                Deposit/Deposit history</h4>
+        </div>
+
+        <ngb-accordion #acc="ngbAccordion" style="    width: 100%;">
+            <ngb-panel id="toggle-1" title="Deposit">
+                <ng-template ngbPanelContent let-opened="opened">
+
+                    <div *ngIf="depot.length ==0">
+                        <div> <span class="empty-text transaction" translate>No deposit yet</span>
+                        </div>
+
+                    </div>
+                    <table *ngIf="depot.length !=0">
+                        <thead>
+                            <tr>
+                                <th translate> Created at </th>
+                                <th translate> Amount </th>
+                                <th translate> From name </th>
+                                <th translate> History reciver </th>
+                                <th translate> Type</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let dep of depot">
+                            <tr>
+                                <td>{{dep.created_at | date:'MM/dd/yyyy h:mm a' }}</td>
+                                <td>{{dep.amount}}</td>
+                                <td>{{dep.from_name}}</td>
+                                <td>{{dep.history_reciver}}</td>
+                                <td>Deposit</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+                </ng-template>
+            </ngb-panel>
+            <ngb-panel id="toggle-2" title="Retrait">
+                <ng-template ngbPanelContent>
+                    <div *ngIf="retrait.length ==0">
+                        <div> <span class="empty-text transaction" translate> No withdrawal yet</span>
+                        </div>
+                    </div>
+                    <table *ngIf="retrait.length !=0">
+                        <thead>
+                            <tr>
+                                <th translate> Created at </th>
+                                <th translate> Amount </th>
+                                <th translate> From name </th>
+                                <th translate> History reciver </th>
+                                <th translate> Type </th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let ret of retrait">
+                            <tr>
+                                <td>{{ret.created_at | date:'MM/dd/yyyy h:mm a' }}</td>
+                                <td>{{ret.amount}}</td>
+                                <td>{{ret.from_name}}</td>
+                                <td>{{ret.history_reciver}}</td>
+                                <td>Retrait</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+
+
+
+
+    </div>
+</div>

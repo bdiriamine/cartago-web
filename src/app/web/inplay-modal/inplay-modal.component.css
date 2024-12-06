@@ -1,0 +1,119 @@
+.close {
+    height: 40px;
+    width: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background: #181818;
+    color: #fff;
+    margin: 4px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: #dfdfdf;
+    color: #181818;
+    border: 1px solid #dfdfdf;
+}
+
+.close:hover i {
+    transform: scale(1.5);
+}
+
+.bg {
+    height: 99vh;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    color: rgba(0, 0, 0, 0.733);
+    width: 100vw !important;
+    overflow: hidden;
+}
+
+::ng-deep .modal-dialog.modal-xxl {
+    margin: 0 !important;
+}
+
+::ng-deep .modal-dialog.modal-xxl .modal-content {
+    width: 100vw !important;
+}
+
+.bg:before {
+    opacity: 0.5;
+    width: 102vw;
+    height: 99vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.733);
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding: 0 7rem !important;
+    z-index: 5;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 114px;
+}
+
+.modal-title {
+    color: #fff;
+    font-size: 24px;
+    line-height: 1em;
+    text-transform: none;
+    font-weight: 700;
+    z-index: 2;
+    cursor: pointer;
+    font-family: "Prototype";
+}
+
+.fullscreen-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 2;
+    -ms-overflow-style: none;
+}
+
+.fullscreen-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+.iframe-style {
+    border: 0;
+    width: 97vw;
+    height: 90vh;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+}

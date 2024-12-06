@@ -1,0 +1,52 @@
+<div class="d-flex " style=" background: #152633; ">
+    <div class="fixed-box">
+        <div class="jp">
+            <p class="logo-1 p-0 m-0">
+                <img src="https://carthagobet.tn/assets/images/JACK.webp" width="100%" height="30px"
+                    style="object-fit: cover; height: 50px;">
+            </p>
+        </div>
+        <div>
+            <div class="jackpot-wins">
+                <div class="prize" *ngFor="let jackpot of jackpots">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="gooey">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                                <feColorMatrix in="blur" type="matrix"
+                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                    result="highContrastGraphic" />
+                                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
+
+                    <button id="gooey-button" [routerLink]="['/jackpot']">
+                        {{jackpot}}
+                        <span class="bubbles">
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="scrolling-limit">
+
+        <div *ngIf="winnerr" class="scrolling" translate>
+            After a good gaming week the JACKPOT winner is: <span style="color:#e1ad11  ;">{{winnerr}}</span>
+        </div>
+    </div>
+</div>

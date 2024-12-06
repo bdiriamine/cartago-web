@@ -1,0 +1,47 @@
+::ng-deep.modal-content {
+    box-sizing: border-box;
+
+    background: transparent !important;
+    border: 0 !important;
+}
+
+::ng-deep .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex !important;
+    align-items: center;
+}
+
+form {
+    width: 465px;
+}
+
+::ng-deep .close {
+    border: 0 !important;
+
+    border: 0;
+    background: transparent;
+    font-size: 1.5rem;
+    outline: none;
+    color: rgb(226, 195, 19);
+    font-family: "Prototype";
+}
+.modal-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 0px;
+}
+.modal-header h4 {
+    color: rgb(226, 195, 19);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+.modal-body {
+    /* position: relative; */
+    /* flex: 1 1 auto; */
+    padding: 0rem;
+}

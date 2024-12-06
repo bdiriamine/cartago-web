@@ -1,0 +1,8 @@
+<app-nav-bar id="navbr"></app-nav-bar>
+
+<!-- <app-pub-message id="pub"></app-pub-message> -->
+<div style="padding-top: 80px;" id="pages">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+<app-footer id="ftr"></app-footer>
+<app-chat *ngIf="isLoggedIn" class="chat" id="hd"></app-chat>
